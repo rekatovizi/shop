@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italok</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+</head>
+<body>
+    <div class="container">
+
+        <h1>Italok</h1>
+        <div class="container mt-3">
+            <h2>Új ital</h2>
+            <form id="filmForm">
+                <div class="mb-3 mt-3">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" minlength="3" maxlength="100" required>
+                    <span class="msg" id="nameMsg"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="price">Price</label>
+                    <input type="number" class="form-control" id="price" placeholder="Enter price" name="price" min="1" max="10000" required>
+                    <span class="msg" id="priceMsg"></span>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="Add()">Submit</button>
+            </form>
+        </div>
+
+
+        <br>
+
+        <!-- TÁBLÁZAT -->
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+
+            <tbody id="tartalom">
+            </tbody>
+        </table>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
