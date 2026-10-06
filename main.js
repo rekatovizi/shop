@@ -69,6 +69,7 @@ fields.forEach(id => {
     validate(); 
   }); 
 }); 
+
 function setMsg(id, text, ok = false) { 
   const span = document.getElementById(id + "Msg"); 
   span.textContent = text; 
@@ -78,21 +79,22 @@ function setMsg(id, text, ok = false) {
     span.className = "msg error"; 
   } 
 } 
+
 function validate(submit = false) { 
   const name = document.getElementById("name").value.trim(); 
   const price = document.getElementById("price").value; 
   let valid = true; 
   if (submit || document.getElementById("name").dataset.touched === "true") { 
-    if (name.length < 3 || name.length > 100) { 
-      setMsg( "name", "A névnek legalább 3 karakter hosszúnak kell lennie!" ); 
+    if (name.length < 1 || name.length > 100) { 
+      setMsg( "name", "A névnek legalább 1 karakter hosszúnak kell lennie!" ); 
       valid = false; 
     } else { 
       setMsg("name", "✔", true); 
     } 
   } 
   if (submit || document.getElementById("price").dataset.touched === "true") { 
-    if (price < 1 || price > 10000 || price === "") { 
-      setMsg( "price", "Az árnak 1 és 10000 között kell lennie!" ); 
+    if (price < 1 || price > 10000 || price === "" || price % 10 !== 0) { 
+      setMsg( "price", "Az árnak 1 és 10000 között kell lennie, és 10-zal osztható kell lennie!" ); 
       valid = false; 
     } else { 
       setMsg("price", "✔", true); 

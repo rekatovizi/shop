@@ -5,3 +5,11 @@
 .error {
     color: red;
 }
+
+body{
+    background-color: #c7e9ed !important;
+}
+.btn {
+    background-color: #034c54 !important;
+    color: white; 
+}
