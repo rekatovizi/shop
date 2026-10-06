@@ -13,3 +13,10 @@ body{
     background-color: #034c54 !important;
     color: white; 
 }
+table td , table th {
+    background-color: #c7e9ed !important;   
+}
+table th {
+    background-color: #42a2ac !important;
+    color: white;
+}
